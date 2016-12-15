@@ -6,51 +6,34 @@
 // file LICENSE, which is part of this source code package, for details.
 // ====================================================
 #endregion
-using UnityEngine;
+
 using System.Collections;
+using System.Linq;
+using ProjectPorcupine.Localization;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseOverTileTypeText : MonoBehaviour
+/// <summary>
+/// MouseOverRoomIndex impliments the abstact class MouseOver.
+/// It returns info strings that represent the tiles type.
+/// </summary>
+public class MouseOverTileTypeText : MouseOver
 {
-
-    // Every frame, this script checks to see which tile
-    // is under the mouse and then updates the GetComponent<Text>.text
-    // parameter of the object it is attached to.
-
-    Text myText;
-    MouseController mouseController;
-
-    // Use this for initialization
-    void Start()
+    protected override string GetMouseOverString(Tile tile)
     {
-        myText = GetComponent<Text>();
+        string tileType = "N/A";
 
-        if (myText == null)
+        if (tile != null)
         {
-            Logger.LogError("MouseOverTileTypeText: No 'Text' UI component on this object.");
-            this.enabled = false;
-            return;
+            tileType = tile.Type.ToString();
         }
 
-        mouseController = WorldController.Instance.mouseController;
-        if (mouseController == null)
+        string tileInfo = LocalizationTable.GetLocalization("tile_type", tileType);
+        if (tile != null && tile.Utilities != null && tile.Utilities.Count > 0)
         {
-            Logger.LogError("How do we not have an instance of mouse controller?");
-            return;
-        }
-    }
-	
-    // Update is called once per frame
-    void Update()
-    {
-        Tile t = mouseController.GetMouseOverTile();
-        string tileType = "Unknown";
-
-        if (t != null)
-        {
-            tileType = t.Type.ToString();
+            tileInfo += "\n" + tile.Utilities.First().Value.Grid.GetId();
         }
 
-        myText.text = "Tile Type: " + tileType;
+        return tileInfo;
     }
 }

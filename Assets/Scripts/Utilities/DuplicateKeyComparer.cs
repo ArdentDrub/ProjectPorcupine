@@ -1,4 +1,12 @@
-﻿using System;
+﻿#region License
+// ====================================================
+// Project Porcupine Copyright(C) 2016 Team Porcupine
+// This program comes with ABSOLUTELY NO WARRANTY; This is free software, 
+// and you are welcome to redistribute it under certain conditions; See 
+// file LICENSE, which is part of this source code package, for details.
+// ====================================================
+#endregion
+using System;
 using System.Collections.Generic;
 
 public class DuplicateKeyComparer<TKey>
@@ -7,11 +15,11 @@ public class DuplicateKeyComparer<TKey>
 {
     #region IComparer<TKey> Members
 
-    int equalReturn;
+    private int equalReturn;
 
-    public DuplicateKeyComparer(bool EqualValueAtEnd=false)
+    public DuplicateKeyComparer(bool equalValueAtEnd = false)
     {
-        this.equalReturn=EqualValueAtEnd?-1:1;
+        this.equalReturn = equalValueAtEnd ? -1 : 1;
     }
 
     public int Compare(TKey x, TKey y)
@@ -19,9 +27,13 @@ public class DuplicateKeyComparer<TKey>
         int result = x.CompareTo(y);
 
         if (result == 0)
-            return equalReturn;   // Handle equality as beeing greater
+        {
+            return equalReturn; // Handle equality as beeing greater
+        }
         else
+        {
             return result;
+        }
     }
 
     #endregion

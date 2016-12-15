@@ -1,5 +1,8 @@
-# ProjectPorcupine
+# ProjectPorcupine [![Build Status](https://travis-ci.org/TeamPorcupine/ProjectPorcupine.svg?branch=master)](https://travis-ci.org/TeamPorcupine/ProjectPorcupine)
+# Project Porcupine will migrate to Unity 5.5.0 on January 1st 2017, be sure to update your Unity installation before then.
 Project Porcupine: A Base-Building Game...in Space!
+
+![Preview Thumbnail](https://cloud.githubusercontent.com/assets/22880786/19826387/7ad0f0d2-9dd4-11e6-92f3-eb47b395ac63.png)
 
 [About](#about)  
 [Copyright & Licensing](#copyright--licensing)  
@@ -52,10 +55,18 @@ All non-code assets (e.g. art, sound) is licensed under CC BY-NC-SA 3.0
 The original tutorial project files, which feature no community-contributed code,
 are licensed under the MIT License and can be found here:
  * <http://quill18.com/porcupine/project_files/>
+ 
+Audio engine : FMOD by Firelight Technologies
+
+Logger: Based on UnityDebugger by Valian (at <https://github.com/Valian/UnityDebugger>), modified source code available at <https://github.com/koosemose/UnityDebugger>
 
 ## Contributing
 
 Please check the [CONTRIBUTING.md](CONTRIBUTING.md) file for contribution instructions and guidelines.
+
+For further information, such as Roadmaps, explanations of systems and features, Standards and Conventions, and all your Git needs and troubleshooting see the [Wiki](https://github.com/TeamPorcupine/ProjectPorcupine/wiki)
+
+Make sure that you are using Unity 5.4.2 [Windows] (https://unity3d.com/get-unity/download?thank-you=update&download_nid=43049&os=Win) | [Mac] (https://unity3d.com/get-unity/download?thank-you=update&download_nid=43049&os=Mac) but we are currently migrating towards Unity 5.5 [Windows] (https://unity3d.com/get-unity/download?thank-you=update&download_nid=44093&os=Win) | [Mac] (https://unity3d.com/get-unity/download?thank-you=update&download_nid=44093&os=Mac)
 
 ## Vote on Proposed Features
 
@@ -66,7 +77,8 @@ Here's the current list of proposed features:
 
 ## Community
 
-* [unoffical discord channel ](https://discord.gg/68hkpSA)<discord.projectporcupine.com>
+* [Unoffical Discord Channel ](https://discord.gg/68hkpSA)<discord.projectporcupine.com>
+* [Unoffical Subreddit](https://reddit.com/r/ProjectPorcupine)
 
 ## Contact
 
